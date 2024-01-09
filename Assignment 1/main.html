@@ -4,10 +4,46 @@
     <head>
         <title> 1 for Web Dev </title>
         <meta name="author" content="Kabir Vidyarthi">
+        <style>
+            .lbar {
+                height: 30%;
+                width: 20%;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: lightgreen;
+                overflow-x: hidden; /* Disable horizontal scroll */
+                padding-top: 20px;
+            }
+            .rbar {
+                height: 30%;
+                width: 20%;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                background-color: orchid;
+                overflow-x: hidden; /* Disable horizontal scroll */
+                padding-top: 20px;
+            }
+            .main {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+        </style>
     </head>
-    <body>
-        While my goals are rather lofty, I do not have the skills to back them up at this time, so...
-        <a href="./showing_off.html"> behold... Some stuff </a>
-        
+    <body style="background-color: bisque;">
+        <div class="lbar">
+            navigation sidebar that I'd use in such a project
+        </div>
+
+        <div class="rbar">
+            proposed ad bar
+        </div>
+        <div class="main">
+            While my goals are rather lofty, I do not have the skills to back them up at this time, so...
+            <a href="./showing_off.html"> behold... Some stuff </a>
+        </div>
     </body>
 </html>
