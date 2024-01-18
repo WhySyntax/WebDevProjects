@@ -1,0 +1,42 @@
+/* this file will have the style conventions for divs that could be contained on the entire site */
+
+/* style conventions for left ad-bar */
+
+.lbar {
+    height: 80%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: lightgreen;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* style conventions for right adbar */
+
+.rbar {
+    height: 80%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: orchid;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* style conventions for main content */
+
+.main {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* style conventions for top searchbar */
+
+
+/* style conventions for bottom div */
+
