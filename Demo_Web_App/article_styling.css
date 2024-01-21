@@ -4,3 +4,55 @@
 
 /* style conventions for an article sections */
 
+.section {
+   box-sizing: border-box;
+   position: relative;
+   width: 100%;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color: lightgreen;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+/* style conventions for top page stuff */
+
+.top_panel {
+   box-sizing: border-box;
+   position: relative;
+   width: 100%;
+   z-index: 1;
+   top: 0;
+   background-color: lightgreen;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+.info_panel {
+   box-sizing: border-box;
+   position: relative;
+   width: 30%;
+   z-index: 1;
+   top: 0;
+   float: right;
+   background-color: lightgreen;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+.main_summary {
+   box-sizing: border-box;
+   position: relative;
+   width: 60%;
+   z-index: 1;
+   top: 0;
+   float: left;
+   background-color: lightgreen;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}

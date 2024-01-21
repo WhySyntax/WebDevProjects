@@ -3,6 +3,7 @@
 /* style conventions for left ad-bar */
 
 .lbar {
+    box-sizing: border-box;
     height: 80%;
     width: 20%;
     position: fixed;
@@ -11,12 +12,14 @@
     left: 0;
     background-color: lightgreen;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    padding: 20px;
+    padding-bottom: 20%;
 }
 
 /* style conventions for right adbar */
 
 .rbar {
+    box-sizing: border-box;
     height: 80%;
     width: 20%;
     position: fixed;
@@ -25,14 +28,17 @@
     right: 0;
     background-color: orchid;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    padding: 20px;
+    padding-bottom: 40%;
 }
 
 /* style conventions for main content */
 
 .main {
+    box-sizing: border-box;
     margin-left: 20%;
     margin-right: 20%;
+    padding: 5px;
 }
 
 /* style conventions for top searchbar */
@@ -40,3 +46,11 @@
 
 /* style conventions for bottom div */
 
+.bottom {
+    box-sizing: border-box;
+    height: 20%;
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    padding: 15px;
+}

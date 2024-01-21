@@ -10,5 +10,6 @@ The two sidebars will be filled with <a href="https://youtu.be/KpPE85Jogjw?si=zz
 The main changes that I anyways wanted to make were to how Fandom displays individual wikis. Rather than primarily promoting the main wiki farm or other wikis, if I were to design one I would focus the sidebars and search functionality to just the wiki that the user is on, with a home button in the top right if they want to browse a different wiki. <br>
 The right sidebar could even have a selector for the graduations of spoilers that a user would want access to (again the bottom half of said sidebar would need to be filled with ads to make the wiki farm profitable, the left sidebar would also have ads whenever the menu is collapsed).
 # Week 2 plan
-I'm going to add an actual sample page for how an article would look like, with a table of content box, and different sections
-It'll use CSS for the different sections so that they can be remade/adjusted efficiently
+Adding onto what I did with week 1, I'm going ot design how articles would look like on the site, with some inspiration from wikipedia and other similar sites.
+![img](completed_article_layout.png)
+Similar to other wikis, there will be a box to the side that has basic information about the article contents, with the main summary at the top along with a table of contents.
