@@ -10,7 +10,6 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: lightgreen;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding: 20px;
     padding-bottom: 20%;
@@ -26,7 +25,6 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: orchid;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding: 20px;
     padding-bottom: 40%;
@@ -53,4 +51,23 @@
     position: fixed;
     bottom: 0%;
     padding: 15px;
+}
+
+/* overarching style conventions */
+
+body {
+    background-color: #190b14;
+    color: azure;
+}
+
+a {
+    color: aqua;
+}
+
+a:hover {
+    color: aquamarine;
+}
+
+a:visited:active {
+    color:blueviolet
 }
