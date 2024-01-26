@@ -9,14 +9,26 @@
         <link rel="stylesheet" href="article_styling.css">
     </head>
     <body>
+        <div class="topnav">
+            <a href="main.html"> &#127968 </a> menu dropdown button; &#128269 <input type="text" placeholder="Search...">
+        </div>
         <div class="lbar">
-            <h2>The top half of this sidebar would be used for table of contents</h2>
+            <div class="table_selector">
+                <button class="tablinks">Article Contents</button>
+                <button class="tablinks">Wiki Contents</button>
+            </div>
+            <div id="article_contents" class="table_of_contents">
             <ol>
                 <li><a href="#summary">Summary</a></li>
                 <li><a href="#s1">Section 1</a></li>
                 <li><a href="#s2">Section 2</a></li>
                 <li><a href="#s3">Section 3</a></li>
             </ol>
+            </div>
+            <div id="wiki_contents" class="table_of_contents">
+                there's only one page in this wiki, it doesn't need a quick lookup
+            </div>
+            down here are ads. You should've seen the link by now, I don't need to anchor it again.
         </div>
 
         <div class="rbar">

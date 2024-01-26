@@ -1,7 +1,8 @@
 # The Idea
 I am horrible at coming up with ideas usually. When I was trying to come up with something for this project I basically just sat staring at my screen for 20 minutes. Then I realized something. I bashed Fandom in my assignment 0, and something I always say <del>usually hypocritically</del> is, don't criticize people unless you can do it better. So I'm going to try to design a wiki farm.
 [planned layout for assignment 1](#week-1-plan)<br>
-[planned layout for assignment 2](#week-2-plan)
+[planned layout for assignment 2](#week-2-plan)<br>
+[Week 3 and 4 stuff](#weeks-3--4)
 # Week 1 plan
 Like with Fandom there will be a main homepage where users can find wikis that they're searching for.
 ![img](site_planner-1.png)
@@ -13,3 +14,5 @@ The right sidebar could even have a selector for the graduations of spoilers tha
 Adding onto what I did with week 1, I'm going ot design how articles would look like on the site, with some inspiration from wikipedia and other similar sites.
 ![img](completed_article_layout.png)
 Similar to other wikis, there will be a box to the side that has basic information about the article contents, with the main summary at the top along with a table of contents.
+# Weeks 3 & 4
+Finally going to add a top-nav, I didn't initally realize, but during week 2, I added a handful of features that were supposed to be for these weeks
