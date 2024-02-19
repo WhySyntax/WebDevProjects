@@ -5,17 +5,17 @@
         <title> 1 for Web Dev </title>
         <meta charset="UTF-8">
         <meta name="author" content="Kabir Vidyarthi">
-        <link rel="stylesheet" href="site_styling.css">
-        <link rel="stylesheet" href="article_styling.css">
+        <link rel="stylesheet" href="css_stuff/site_styling.css">
+        <link rel="stylesheet" href="css_stuff/article_styling.css">
     </head>
     <body>
         <div class="topnav">
-            <a href="main.html"> &#127968 </a> menu dropdown button; &#128269 <input type="text" placeholder="Search...">
+            <a href="main.html"> &#127968 </a> <button onclick="alert('That does not work')">&#128269</button> <input type="text" placeholder="Search...">
         </div>
         <div class="lbar">
             <div class="table_selector">
-                <button class="tablinks">Article Contents</button>
-                <button class="tablinks">Wiki Contents</button>
+                <button class="tablinks" onclick="swap_table_of_contents(event, 'article_contents')">Article Contents</button>
+                <button class="tablinks" onclick="swap_table_of_contents(event, 'wiki_contents')">Wiki Contents</button>
             </div>
             <div id="article_contents" class="table_of_contents">
             <ol>
@@ -32,6 +32,10 @@
         </div>
 
         <div class="rbar">
+            <h5>Slider to hide spoilers</h5>
+            <label id="indicated_progress">00</label>
+            <input type="range" id="progress_indicator" name="progress" min="0" max="10" value="0" oninput="update_progress_indicator()">
+            <button onclick="hide_spoilers()">Update page</button>
             <h4>Proposed Ad bar</h4>
             there could be a slider here for the progress/spoiler indicator for wikis<br>
             underneath would be <a href="https://youtu.be/KpPE85Jogjw?si=zzoPQacab8fY9wdY&t=16">ads</a>
@@ -41,13 +45,19 @@
                 <div class="info_panel">
                     <h5>Here is quick lookup information for the article contents</h5>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus cum est et suscipit distinctio quisquam ipsa nulla possimus nobis reprehenderit.
-                    Sunt ullam corrupti dolorum asperiores dicta. Corrupti eveniet maiores, adipisci nostrum labore laboriosam eaque ut debitis? Harum voluptatum ex commodi.
+                    Sunt ullam corrupti dolorum asperiores dicta. Corrupti eveniet maiores, adipisci nostrum labore laboriosam eaque ut debitis? Harum voluptatum ex commodi. <span class="spoiler_potential" data-reveal="7">mode random information that changes</span>
                     Asperiores sapiente dolorum voluptatem nam molestias error doloribus, tenetur nesciunt, optio facere minima reiciendis eaque inventore suscipit magnam animi. Vel?
-                    Incidunt, deserunt. Deleniti, optio at autem fugit, consequuntur, modi nostrum quos ea iste necessitatibus quisquam ullam debitis rerum odio earum!
+                    Incidunt, deserunt. Deleniti, optio at autem fugit, consequuntur, modi nostrum quos ea iste necessitatibus quisquam ullam debitis rerum odio earum! <span class="spoiler_potential" data-reveal="6" data-retcon="7"> let me know if you catch this in the site display</span>
                     Esse architecto nulla repellendus dolorem perspiciatis optio mollitia accusantium culpa! Itaque sequi quas velit dolorum reiciendis doloribus quis sit obcaecati?
                 </div>
                 <div class="main_summary">
                     <h3 id="summary">Here is the general summary of the topic of the article</h3>
+                    <p class="spoiler_potential" data-reveal="0" data-retcon="1">
+                        Do you deserve to even be looking at a wiki that you have only seen 10% of the describing material for?
+                    </p>
+                    <p class="spoiler_potential" data-retcon="5">
+                        Here is some information that gets retconned after position 5
+                    </p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, impedit porro. Commodi rem, tempore rerum dolorem recusandae optio neque quo.
                     Ipsam eum atque recusandae ut voluptatem ullam aliquid, iste voluptatum labore, facilis esse odit distinctio dolorem ea ipsum magni aliquam.
                     Perferendis iusto praesentium rem sint recusandae et tempora itaque rerum, sunt repudiandae architecto cupiditate dolor? Nulla laboriosam labore beatae eius?
@@ -56,11 +66,19 @@
             <!-- this is where you put in the actual contents of your articles -->
             <div class="section">
                 <h2 id="s1">Section 1</h2>
+                <p class="spoiler_potential" data-reveal="3" data-retcon="9">
+                    Here's some information that was revealed in position 3, but got changed significantly at position 9
+                </p>
+                <p class="spoiler_potential" data-reveal="9">
+                    This is what got added to that information
+                </p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga laborum consequuntur a corrupti consequatur hic ex nostrum repellat, aut perspiciatis!
                 Odio tempore at cum aspernatur voluptas sint vero velit, officiis reiciendis, incidunt, voluptatum saepe ex aliquam molestiae ab hic nihil!
-                Quae reprehenderit rerum unde hic assumenda rem molestias incidunt quidem voluptates, quis eos quasi, vero sapiente pariatur necessitatibus non? Neque!
-                Ipsa rerum necessitatibus doloribus officia, totam deleniti tempora sit perspiciatis quibusdam. Ipsam quisquam laborum facilis reprehenderit, placeat itaque cumque iste.
-                Consequatur ipsa facilis optio consectetur beatae tempora, totam fugit laborum fuga dolores quos accusamus velit earum omnis quo tenetur reiciendis.
+                <p class="spoiler_potential" data-reveal="4">
+                    Quae reprehenderit rerum unde hic assumenda rem molestias incidunt quidem voluptates, quis eos quasi, vero sapiente pariatur necessitatibus non? Neque!
+                    Ipsa rerum necessitatibus doloribus officia, totam deleniti tempora sit perspiciatis quibusdam. Ipsam quisquam laborum facilis reprehenderit, placeat itaque cumque iste.
+                    Consequatur ipsa facilis optio consectetur beatae tempora, totam fugit laborum fuga dolores quos accusamus velit earum omnis quo tenetur reiciendis.
+                </p>
             </div>
             <div class="section">
                 <h2 id="s2">Section 2</h2>
@@ -69,6 +87,9 @@
                 Quae reprehenderit rerum unde hic assumenda rem molestias incidunt quidem voluptates, quis eos quasi, vero sapiente pariatur necessitatibus non? Neque!
                 Ipsa rerum necessitatibus doloribus officia, totam deleniti tempora sit perspiciatis quibusdam. Ipsam quisquam laborum facilis reprehenderit, placeat itaque cumque iste.
                 Consequatur ipsa facilis optio consectetur beatae tempora, totam fugit laborum fuga dolores quos accusamus velit earum omnis quo tenetur reiciendis.
+                <p class="spoiler_potential" data-reveal="8">
+                    I love the current book series that I'm reading
+                </p>
             </div>
             <div class="section">
                 <h2 id="s3">Section 3</h2>
@@ -76,8 +97,10 @@
                 Odio tempore at cum aspernatur voluptas sint vero velit, officiis reiciendis, incidunt, voluptatum saepe ex aliquam molestiae ab hic nihil!
                 Quae reprehenderit rerum unde hic assumenda rem molestias incidunt quidem voluptates, quis eos quasi, vero sapiente pariatur necessitatibus non? Neque!
                 Ipsa rerum necessitatibus doloribus officia, totam deleniti tempora sit perspiciatis quibusdam. Ipsam quisquam laborum facilis reprehenderit, placeat itaque cumque iste.
-                Consequatur ipsa facilis optio consectetur beatae tempora, totam fugit laborum fuga dolores quos accusamus velit earum omnis quo tenetur reiciendis.
+                Consequatur ipsa facilis optio consectetur beatae tempora, totam fugit laborum fuga<span class="spoiler_potential" data-reveal="6" data-retcon="9"> so much potential to include information in wikis WITHOUT spoiling people</span> dolores quos accusamus velit earum omnis quo tenetur reiciendis.
             </div>
         </div>
+
+        <script src="scripts/article_scripting.js"></script>
     </body>
 </html>

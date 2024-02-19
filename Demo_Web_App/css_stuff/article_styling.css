@@ -73,12 +73,17 @@
    font-size: 17px;
 }
 
-.table_selector button:active {
+.table_selector button.active {
    background-color: black;
 }
 
 .table_of_contents {
    box-sizing: border-box;
+   background-color: black;
    width: 100%;
+   display: none;
+}
+
+.spoiler_potential {
    display: none;
 }
