@@ -51,6 +51,7 @@ function update_progress_indicator() {
 }
 
 window.onload = function() {
+   document.getElementById("progress_indicator").value = 0;
    update_progress_indicator();
    hide_spoilers();
    var toc = document.getElementsByClassName("tablinks");
