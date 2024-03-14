@@ -15,7 +15,9 @@
         <div class="lbar">
             <h3>This's the type of sidebar I'd use in such a project</h3>
             list of other pages<br>
-            <a href="sample_article.html">link to a sample article</a>
+            <a href="sample_article.html">Sample article I designed for assignments 2-4</a>
+            <br>
+            <a href="./showing_off.html"> Random stuff I did for assignment 1</a>
         </div>
 
         <div class="rbar">
@@ -24,11 +26,19 @@
             underneath would be <a href="https://youtu.be/KpPE85Jogjw?si=zzoPQacab8fY9wdY&t=16">ads</a>
         </div>
         <div class="main">
-            While my goals are rather lofty, I do not have the skills to back them up at this time, so...
-            <a href="./showing_off.html"> behold... Some stuff &lt;- this was done for Assignment 1 </a>
+            <h2> Wikis </h2>
+            <ul id="wikis_list">No Wikis</ul>
         </div>
         <div class="bottom">
-            I would likely have two columns here, with some form of contact information so that people can ask to host their own wikis as well as information for people to get involved and help
+            <h4> Form to request new wikis </h4>
+            <label>New Wiki To Make</label>
+            <input type="text" id="new_wiki" placeholder="Wiki to Make">
+
+            <label>Contact Information</label>
+            <input type="email" id="passcode">
+
+            <button onclick="create_wiki()">Submit New Wiki Request</button>
         </div>
+        <script src="scripts/index_scripting.js"></script>
     </body>
 </html>
