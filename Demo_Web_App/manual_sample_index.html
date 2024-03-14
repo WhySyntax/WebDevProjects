@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <title> 1 for Web Dev </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Kabir Vidyarthi">
+        <link rel="stylesheet" href="/css_stuff/site_styling.css">
+        <link rel="stylesheet" href="/css_stuff/homepage_styling.css">
+    </head>
+    <body>
+        <div class="topnav">
+         <a href="/index.html"> &#127968 </a> <button onclick="alert('That does not work')">&#128269</button> <input type="text" placeholder="Search...">
+        </div>
+        <div class="lbar">
+            placeholder text
+        </div>
+
+        <div class="rbar">
+            <h5>Proposed Ad bar</h5>
+            here be <a href="https://youtu.be/KpPE85Jogjw?si=zzoPQacab8fY9wdY&t=16">ads</a>
+        </div>
+        <div class="main">
+            <h2> Articles about <span>Manual Sample</span></h2>
+            <ul id="articles_list">No Articles</ul>
+        </div>
+        <div class="bottom">
+            <h4> Form to request new articles </h4>
+            <label>New Wiki To Make</label>
+            <input type="text" id="new_article" placeholder="article to Make">
+
+            <label>Contact Information</label>
+            <input type="email" id="passcode">
+
+            <button onclick="create_article()">Submit New article Request</button>
+        </div>
+        <script src="/scripts/index_scripting.js"></script>
+    </body>
+</html>

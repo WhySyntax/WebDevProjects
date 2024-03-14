@@ -12,24 +12,6 @@ function fetch_wikis() {
       }
       link_wikis();
    });
-   // var xhttp = new XMLHttpRequest();
-   // xhttp.onreadystatechange = function() {
-   //    if (this.readyState == 4 && this.status == 200) {
-   //       // console.log("retrieved file correctly");
-   //       var raw = this.responseText.split('\n');
-   //       for (var row of raw) {
-   //          // console.log(row.trim());
-   //          wikis.add(row.trim());
-   //          // console.log(wikis.size);
-   //       }
-   //       link_wikis();
-   //       // console.log(`File Contents: ${raw}`);
-      // } else {
-      //    console.log(`Look up what status code ${this.status} with ready state ${this.readyState} means`);
-      // }
-   // };
-   // xhttp.open("POST", "wikis.dat", true);
-   // xhttp.send();
 }
 
 function link_wikis() {
@@ -38,6 +20,29 @@ function link_wikis() {
    for (var wiki of wikis.values()) {
       // console.log(wiki);
       wikis_list.innerHTML += '<li><a href="' + wiki + '_index.html">' + wiki.replace(/_/g, ' ') + '</a></li><br>';
+   }
+}
+
+function fetch_articles(wiki) {
+   var req = new Request(wiki + '/articles.dat');
+   fetch(req).then((response) => {
+      if (!response.ok) {
+         throw new Error(`HTTP error! Status: ${response.status}`)
+      }
+      return response.text();
+   }).then((raw) => {
+      for (var article of raw.split('\n')) {
+         wikis.add(article.trim());
+      }
+      link_articles();
+   });
+}
+
+function link_articles() {
+   var articles_list = document.getElementById("articles_list");
+   articles_list.innerHTML = "";
+   for (var article of wikis.values()) {
+      articles_list.innerHTML += '<li><a href="' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
    }
 }
 
@@ -51,8 +56,9 @@ window.onload = function() {
       fetch_wikis();
    } else {
       //loop through folder with corresponding names and create a list of links to any that are html
-      
-      
+      console.log(page);
+      console.log(page.slice(0,-11));
+      fetch_articles(page.slice(0,-11));
    }
    console.log("Done Loading window");
 }

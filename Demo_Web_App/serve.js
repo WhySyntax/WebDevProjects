@@ -19,7 +19,6 @@ http.createServer((req, res) => {
    var q = url.parse(req.url, true);
    var filename = "." + q.pathname;
    var content_type = "text/" + filename.split(".")[2];
-   // console.log(content_type); // this is cuz I wanted to see if this would work, it did, mystery solved
 
    fs.readFile(filename, function (err, data) {
       if (err) {
