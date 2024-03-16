@@ -1,0 +1,89 @@
+/* This file will have the styling conventions for any divs that would be commonly found on an article page*/
+/* style conventions for a table of contents div */
+
+
+/* style conventions for an article sections */
+
+.section {
+   box-sizing: border-box;
+   position: relative;
+   width: 100%;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+/* style conventions for top page stuff */
+
+.top_panel {
+   box-sizing: border-box;
+   position: relative;
+   width: 100%;
+   z-index: 1;
+   top: 0;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+.info_panel {
+   box-sizing: border-box;
+   position: relative;
+   width: 30%;
+   z-index: 1;
+   top: 0;
+   float: right;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+.main_summary {
+   box-sizing: border-box;
+   position: relative;
+   width: 60%;
+   z-index: 1;
+   top: 0;
+   float: left;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-right: 20px;
+   padding-bottom: 10px;
+}
+
+.table_selector {
+   box-sizing: border-box;
+   position: relative;
+   width: 100%;
+   top: 0;
+}
+
+.table_selector button {
+   background-color: inherit;
+   box-sizing: border-box;
+   width: 50%;
+   float: left;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   padding: 15px;
+   transition: 0.3s;
+   font-size: 17px;
+}
+
+.table_selector button.active {
+   background-color: black;
+}
+
+.table_of_contents {
+   box-sizing: border-box;
+   background-color: black;
+   width: 100%;
+   display: none;
+}
+
+.spoiler_potential {
+   display: none;
+}

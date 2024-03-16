@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <title> 1 for Web Dev </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Kabir Vidyarthi">
+        <link rel="stylesheet" href="/public/css_stuff/site_styling.css">
+        <link rel="stylesheet" href="/public/css_stuff/homepage_styling.css">
+    </head>
+    <body>
+        <div class="topnav">
+            Home button; menu dropdown button; searchbar
+        </div>
+        <div class="lbar">
+            <h3>This's the type of sidebar I'd use in such a project</h3>
+            list of other pages<br>
+            <a href="/public/articles/sample_article.html">Sample article I designed for assignments 2-4</a>
+            <br>
+            <a href="/public/articles/showing_off.html"> Random stuff I did for assignment 1</a>
+        </div>
+
+        <div class="rbar">
+            <h5>Proposed Ad bar</h5>
+            there could be a slider here for the progress/spoiler indicator for wikis<br>
+            underneath would be <a href="https://youtu.be/KpPE85Jogjw?si=zzoPQacab8fY9wdY&t=16">ads</a>
+        </div>
+        <div class="main">
+            <h2> Wikis </h2>
+            <ul id="wikis_list">No Wikis</ul>
+        </div>
+        <div class="bottom">
+            <h4> Form to request new wikis </h4>
+            <label>New Wiki To Make</label>
+            <input type="text" id="new_wiki" placeholder="Wiki to Make">
+
+            <label>Contact Information</label>
+            <input type="email" id="passcode">
+
+            <button onclick="create_wiki()">Submit New Wiki Request</button>
+        </div>
+        <script src="/public/scripts/index_scripting.js"></script>
+    </body>
+</html>
