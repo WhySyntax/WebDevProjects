@@ -34,15 +34,15 @@ function fetch_articles(wiki) {
       for (var article of raw.split('\n')) {
          wikis.add(article.trim());
       }
-      link_articles();
+      link_articles(wiki);
    });
 }
 
-function link_articles() {
+function link_articles(wiki) {
    var articles_list = document.getElementById("articles_list");
    articles_list.innerHTML = "";
    for (var article of wikis.values()) {
-      articles_list.innerHTML += '<li><a href="' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
+      articles_list.innerHTML += '<li><a href="' + wiki + '/' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
    }
 }
 
@@ -50,17 +50,17 @@ window.onload = function() {
    var path = window.location.pathname;
    var page = path.split("/").pop();
    // console.log(page);
-   // console.log(path);
+   console.log(path);
    if (page == "index.html" || page == "") {
       //loop through folder and check for index files, create a list of links to them
       fetch_wikis();
    } else {
       //loop through folder with corresponding names and create a list of links to any that are html
-      console.log(page);
-      console.log(page.slice(0,-11));
+      // console.log(page);
+      // console.log(page.slice(0,-11));
       fetch_articles(page.slice(0,-11));
    }
-   console.log("Done Loading window");
+   // console.log("Done Loading window");
 }
 
 function create_wiki() {
@@ -79,5 +79,16 @@ function create_wiki() {
 }
 
 function create_article() {
-
+   var check_user = document.getElementById("passcode").value;
+   if (check_user != "kabir") {
+      alert("You lack permission to make an article");
+      return;
+   }
+   var new_article = document.getElementById("new_article").value.replace(/ /g, "_").toLowerCase();
+   // console.log(new_article);
+   if (wikis.has(new_article)) {
+      alert("Article Already Exists");
+      return;
+   }
+   //create an index file and an articles folder
 }

@@ -1,3 +1,5 @@
+var wiki = "";
+
 function swap_table_of_contents(evt, needed_table) {
    console.log(evt);
    var i, tables, table_switchers;
@@ -15,6 +17,9 @@ function hide_spoilers() {
    var i, current_position, pars;
    var slider = document.getElementById("progress_indicator");
    current_position = Number(slider.value);
+   
+   sessionStorage.setItem(wiki, current_position);
+   
    console.log(`Hiding spoilers unavalible at ${current_position}`);
    pars = document.getElementsByClassName("spoiler_potential");
    for (i = 0; i < pars.length; i++) {
@@ -50,8 +55,42 @@ function update_progress_indicator() {
    document.getElementById("indicated_progress").innerHTML = String(document.getElementById("progress_indicator").value).padStart(2,'0');
 }
 
+function fetch_articles(wiki) {
+   var articles = [];
+   var req = new Request(wiki + '/articles.dat');
+   fetch(req).then((response) => {
+      if (!response.ok) {
+         throw new Error(`HTTP error! Status: ${response.status}`)
+      }
+      return response.text();
+   }).then((raw) => {
+      for (var article of raw.split('\n')) {
+         articles.push(article.trim());
+      }
+      link_articles(wiki, articles);
+   });
+}
+
+function link_articles(wiki, articles) {
+   var articles_list = document.getElementById("wiki_contents");
+   articles_list.innerHTML = "";
+   for (var article of articles) {
+      articles_list.innerHTML += '<li><a href="' + wiki + '/' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
+   }
+}
+
 window.onload = function() {
-   document.getElementById("progress_indicator").value = 0;
+   var path = window.location.pathname;
+   wiki = "/" + path.split("/")[1];
+   console.log(path);
+   console.log(wiki);
+   fetch_articles(wiki);
+   let progress = 0;
+   let last_progress = sessionStorage.getItem(wiki);
+   if (last_progress) {
+      progress = last_progress;
+   }
+   document.getElementById("progress_indicator").value = progress;
    update_progress_indicator();
    hide_spoilers();
    var toc = document.getElementsByClassName("tablinks");
