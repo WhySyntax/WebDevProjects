@@ -57,7 +57,7 @@ function update_progress_indicator() {
 
 function fetch_articles(wiki) {
    var articles = [];
-   var req = new Request('/public/dirs/' + wiki + '.dat');
+   var req = new Request('/dirs/' + wiki + '.dat');
    fetch(req).then((response) => {
       if (!response.ok) {
          throw new Error(`HTTP error! Status: ${response.status}`)
@@ -75,7 +75,7 @@ function link_articles(wiki, articles) {
    var articles_list = document.getElementById("wiki_contents");
    articles_list.innerHTML = "";
    for (var article of articles) {
-      articles_list.innerHTML += '<li><a href="' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
+      articles_list.innerHTML += '<li><a href="/articles/' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
    }
 }
 

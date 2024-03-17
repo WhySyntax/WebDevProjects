@@ -45,7 +45,7 @@ function link_articles(wiki) {
    var articles_list = document.getElementById("articles_list");
    articles_list.innerHTML = "";
    for (var article of wikis.values()) {
-      articles_list.innerHTML += '<li><a href="' + '/public/articles/' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
+      articles_list.innerHTML += '<li><a href="' + '/articles/' + article + '.html">' + article.replace(/_/g, ' ') + '</a></li><br>';
    }
 }
 
